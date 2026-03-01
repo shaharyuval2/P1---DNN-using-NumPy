@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "p1_dnn"
+version = "0.1.0"
+description = "A modular Deep Neural Network from scratch for MNIST"
+readme = "README.md"
+authors = [{ name = "Shahar", email = "your-email@example.com" }]
+dependencies = [
+    "numpy",
+    "pygame",
+    "scipy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+# Keep your existing Ruff config here
+select = ["E", "F", "I"]
+fix = true
