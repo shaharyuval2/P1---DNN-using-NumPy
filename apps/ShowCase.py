@@ -13,7 +13,7 @@ BOARD_HEIGHT = BOARD_SIZE * PIXEL_MULTIPLE
 BOARD = None
 
 COLOURS = {
-    "main": (54, 56, 47),
+    "main": (88, 97, 91),
     "secondary": (105, 117, 101),
     "green": (85, 110, 83),
     "third": (255, 242, 223),

@@ -13,7 +13,8 @@ To truly understand AI, I decided to "break the black box." Instead of relying o
 * **Optimized Math:** Fully vectorized batch processing for efficient training on the MNIST dataset.
 * **Professional Architecture:** Decoupled "Source Layout" design, treating the engine as a reusable Python package.
 * **Interactive Showcase:** A Pygame-based GUI where you can draw digits and watch the model predict them in real-time.
-[add video of the showcase at work]
+<video src="assets/showcase_demo.mp4" controls="controls" style="max-width: 100%;">
+</video>
 
 ## The Mathematics
 
@@ -73,7 +74,10 @@ $$\text{scale}_{\text{He}} = \sqrt{\frac{2}{n_{\text{in}}}}$$
 ### Backpropagation: The Engine of Learning
 here attached my personal notes and derivation of the core formulas of the backpropogation algorithm
 
-[attach pdf of notes here]
+![Alternative Text](assets/dnn_backprop_derivation_page1.png)
+![Alternative Text](assets/dnn_backprop_derivation_page2.png)
+![Alternative Text](assets/dnn_backprop_derivation_page3.png)
+![Alternative Text](assets/dnn_backprop_derivation_page4.png)
 
 #### The Algorithm
 
