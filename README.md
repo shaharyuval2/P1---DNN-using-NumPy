@@ -8,13 +8,12 @@ This project is a modular, high-performance Deep Neural Network (DNN) built enti
 
 To truly understand AI, I decided to "break the black box." Instead of relying on high-level frameworks like PyTorch or TensorFlow, **I manually derived the backpropagation formulas from scratch** and implemented the vectorized matrix operations myself. This ensured a first-principles understanding of exactly how data/gradients flow through a network.
 
-#### Key Features
 * **Custom DNN Engine:** Modular architecture allowing for dynamic layer sizes and activation types.
 * **Optimized Math:** Fully vectorized batch processing for efficient training on the MNIST dataset.
 * **Professional Architecture:** Decoupled "Source Layout" design, treating the engine as a reusable Python package.
 * **Interactive Showcase:** A Pygame-based GUI where you can draw digits and watch the model predict them in real-time.
-<video src="assets/showcase_demo.mp4" controls="controls" style="max-width: 100%;">
-</video>
+
+![showcase_demo](https://github.com/user-attachments/assets/720b8978-a082-4bc0-a7eb-ef1b69200c4a)
 
 ## The Mathematics
 
@@ -68,16 +67,15 @@ $$\text{Var}(w) = \frac{2}{n_{\text{in}} + n_{\text{out}}} \implies \text{scale}
 **He (Kaiming) Initialization**
 The ReLU activation function sets all negative values to zero, which effectively **halves the variance** of the output. To compensate for this loss of signal, the variance requirement is doubled:
 $$n_{\text{in}} \cdot \text{Var}(w) = 2 \implies \text{Var}(w) = \frac{2}{n_{\text{in}}}$$
+
 $$\text{scale}_{\text{He}} = \sqrt{\frac{2}{n_{\text{in}}}}$$
 
+and here we neglect the backward constraint
 
 ### Backpropagation: The Engine of Learning
 here attached my personal notes and derivation of the core formulas of the backpropogation algorithm
 
-![Alternative Text](assets/dnn_backprop_derivation_page1.png)
-![Alternative Text](assets/dnn_backprop_derivation_page2.png)
-![Alternative Text](assets/dnn_backprop_derivation_page3.png)
-![Alternative Text](assets/dnn_backprop_derivation_page4.png)
+[dnn_backprop_derivation.pdf](https://github.com/user-attachments/files/25677832/dnn_backprop_derivation.pdf)
 
 #### The Algorithm
 
@@ -99,7 +97,7 @@ To find the error in the previous hidden layer, we "push" the error back through
 
 $$\delta^{(l-1)} = ((w^{(l)})^T \cdot \delta^{(l)}) \odot \sigma'(z^{(l-1)})$$
 
-*(Where $$\odot$$ represents the element-wise Hadamard product)*
+(Where $$\odot$$ represents the element-wise Hadamard product)
 
 
 
@@ -117,11 +115,17 @@ Ensure you have a virtual environment active before proceeding:
 1.  **Clone the Repository**
     
 ```bash
-    git clone [https://github.com/yourusername/P1_DNN.git](https://github.com/yourusername/P1_DNN.git)
+    git clone https://github.com/shaharyuval2/P1---DNN-using-NumPy.git
     cd P1_DNN
 ```
 
-2.  **Install in Editable Mode**
+2. **Create and Activate Virtual Environment**
+```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+
+3.  **Install in Editable Mode**
     
 ```bash
     pip install -e .
@@ -140,7 +144,7 @@ This uses the `pyproject.toml` configuration to set up the `p1_dnn` package and 
 ```
 
 2.  **Train the Model**
-    Run the training script to get the model weights:
+    By running the training script:
     
 ```bash
     python3 apps/training.py
